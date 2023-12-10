@@ -115,13 +115,13 @@ tasks {
     }
 
     signPlugin {
-        certificateChainFile.set(file("certificate/chain.crt"))
-        privateKeyFile.set(file("certificate/private.pem"))
-        password.set(file("certificate/password.txt").readText())
+//        certificateChainFile.set(file("certificate/chain.crt"))
+//        privateKeyFile.set(file("certificate/private.pem"))
+//        password.set(file("certificate/password.txt").readText())
 
-//        certificateChain = environment("CERTIFICATE_CHAIN")
-//        privateKey = environment("PRIVATE_KEY")
-//        password = environment("PRIVATE_KEY_PASSWORD")
+        certificateChain = environment("CERTIFICATE_CHAIN")
+        privateKey = environment("PRIVATE_KEY")
+        password = environment("PRIVATE_KEY_PASSWORD")
     }
 
     publishPlugin {
