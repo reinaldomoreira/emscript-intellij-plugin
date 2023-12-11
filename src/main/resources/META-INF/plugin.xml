@@ -6,13 +6,12 @@
 
     <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.reinaldomoreira.emscriptintellijplugin.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <fileType
+            name="EMScript File"
+            implementationClass="com.github.reinaldomoreira.emscriptintellijplugin.language.EMScriptFileType"
+            fieldName="INSTANCE"
+            language="EMScript"
+            extensions="ems"/>
     </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.reinaldomoreira.emscriptintellijplugin.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
 </idea-plugin>
