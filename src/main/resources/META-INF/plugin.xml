@@ -14,4 +14,19 @@
             language="EMScript"
             extensions="ems"/>
     </extensions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <lang.parserDefinition language="EMScript"
+                               implementationClass="com.github.reinaldomoreira.emscriptintellijplugin.language.EMScriptParserDefinition"/>
+    </extensions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <lang.syntaxHighlighterFactory
+            language="EMScript"
+            implementationClass="com.github.reinaldomoreira.emscriptintellijplugin.language.EMScriptSyntaxHighlighterFactory"/>
+    </extensions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <colorSettingsPage implementation="com.github.reinaldomoreira.emscriptintellijplugin.language.EMScriptColorSettingsPage"/>
+    </extensions>
 </idea-plugin>

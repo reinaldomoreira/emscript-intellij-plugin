@@ -1,0 +1,20 @@
+{
+  parserClass="com.github.reinaldomoreira.emscriptintellijplugin.language.psi.EMScriptParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="EMScript"
+  psiImplClassSuffix="Impl"
+  psiPackage="com.github.reinaldomoreira.emscriptintellijplugin.language.psi"
+  psiImplPackage="com.github.reinaldomoreira.emscriptintellijplugin.language.psi.impl"
+
+  elementTypeHolderClass="com.github.reinaldomoreira.emscriptintellijplugin.language.psi.EMScriptTypes"
+  elementTypeClass="com.github.reinaldomoreira.emscriptintellijplugin.language.psi.EMScriptElementType"
+  tokenTypeClass="com.github.reinaldomoreira.emscriptintellijplugin.language.psi.EMScriptTokenType"
+}
+
+emsFile ::= item_*
+
+private item_ ::= (property|COMMENT|CRLF)
+
+property ::= (KEY? SEPARATOR VALUE?) | KEY
