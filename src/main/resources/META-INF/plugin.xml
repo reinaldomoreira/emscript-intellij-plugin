@@ -23,10 +23,10 @@
     <extensions defaultExtensionNs="com.intellij">
         <lang.syntaxHighlighterFactory
             language="EMScript"
-            implementationClass="com.github.reinaldomoreira.emscriptintellijplugin.language.EMScriptSyntaxHighlighterFactory"/>
+            implementationClass="com.github.reinaldomoreira.emscriptintellijplugin.language.syntax.highlighter.EMScriptSyntaxHighlighterFactory"/>
     </extensions>
 
     <extensions defaultExtensionNs="com.intellij">
-        <colorSettingsPage implementation="com.github.reinaldomoreira.emscriptintellijplugin.language.EMScriptColorSettingsPage"/>
+        <colorSettingsPage implementation="com.github.reinaldomoreira.emscriptintellijplugin.language.syntax.color_settings.EMScriptColorSettingsPage"/>
     </extensions>
 </idea-plugin>

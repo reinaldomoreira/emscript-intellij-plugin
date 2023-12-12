@@ -5,6 +5,6 @@ import org.jetbrains.annotations.NonNls
 
 class EMScriptLanguage : Language("EMScript") {
     companion object {
-        val INSTANCE = EMScriptLanguage()
+        @JvmStatic val INSTANCE = EMScriptLanguage()
     }
 }

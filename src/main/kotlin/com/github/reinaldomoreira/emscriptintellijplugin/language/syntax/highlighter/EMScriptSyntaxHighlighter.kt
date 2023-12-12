@@ -1,5 +1,6 @@
-package com.github.reinaldomoreira.emscriptintellijplugin.language
+package com.github.reinaldomoreira.emscriptintellijplugin.language.syntax.highlighter
 
+import com.github.reinaldomoreira.emscriptintellijplugin.language.EMScriptLexerAdapter
 import com.github.reinaldomoreira.emscriptintellijplugin.language.psi.EMScriptTypes
 import com.intellij.lexer.Lexer
 import com.intellij.openapi.editor.DefaultLanguageHighlighterColors

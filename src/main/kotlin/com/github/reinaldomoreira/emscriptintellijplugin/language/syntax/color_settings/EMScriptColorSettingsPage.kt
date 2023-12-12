@@ -1,5 +1,7 @@
-package com.github.reinaldomoreira.emscriptintellijplugin.language
+package com.github.reinaldomoreira.emscriptintellijplugin.language.syntax.color_settings
 
+import com.github.reinaldomoreira.emscriptintellijplugin.language.EMScriptIcon
+import com.github.reinaldomoreira.emscriptintellijplugin.language.syntax.highlighter.EMScriptSyntaxHighlighter
 import com.intellij.openapi.editor.colors.TextAttributesKey
 import com.intellij.openapi.fileTypes.SyntaxHighlighter
 import com.intellij.openapi.options.colors.AttributesDescriptor

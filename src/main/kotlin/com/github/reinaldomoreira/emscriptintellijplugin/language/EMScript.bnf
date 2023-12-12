@@ -1,5 +1,6 @@
 {
   parserClass="com.github.reinaldomoreira.emscriptintellijplugin.language.psi.EMScriptParser"
+  parserUtilClass="com.github.reinaldomoreira.emscriptintellijplugin.language.psi.EMScriptParserUtil"
 
   extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
 
@@ -11,6 +12,8 @@
   elementTypeHolderClass="com.github.reinaldomoreira.emscriptintellijplugin.language.psi.EMScriptTypes"
   elementTypeClass="com.github.reinaldomoreira.emscriptintellijplugin.language.psi.EMScriptElementType"
   tokenTypeClass="com.github.reinaldomoreira.emscriptintellijplugin.language.psi.EMScriptTokenType"
+
+  psiImplUtilClass = "com.github.reinaldomoreira.emscriptintellijplugin.language.psi.impl.EMScriptPsiImplUtil"
 }
 
 emsFile ::= item_*
@@ -18,3 +21,6 @@ emsFile ::= item_*
 private item_ ::= (property|COMMENT|CRLF)
 
 property ::= (KEY? SEPARATOR VALUE?) | KEY
+{
+  methods=[getKey getValue]
+}

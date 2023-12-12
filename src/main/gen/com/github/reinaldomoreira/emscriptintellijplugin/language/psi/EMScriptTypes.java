@@ -8,22 +8,22 @@ import com.github.reinaldomoreira.emscriptintellijplugin.language.psi.impl.*;
 
 public interface EMScriptTypes {
 
-	IElementType PROPERTY = new EMScriptElementType("PROPERTY");
+  IElementType PROPERTY = new EMScriptElementType("PROPERTY");
 
-	IElementType COMMENT = new EMScriptTokenType("COMMENT");
-	IElementType CRLF = new EMScriptTokenType("CRLF");
-	IElementType KEY = new EMScriptTokenType("KEY");
-	IElementType SEPARATOR = new EMScriptTokenType("SEPARATOR");
+  IElementType COMMENT = new EMScriptTokenType("COMMENT");
+  IElementType CRLF = new EMScriptTokenType("CRLF");
+  IElementType KEY = new EMScriptTokenType("KEY");
+  IElementType SEPARATOR = new EMScriptTokenType("SEPARATOR");
 	IElementType VALUE = new EMScriptTokenType("VALUE");
-	IElementType BAD_CHARACTER = new EMScriptTokenType("BAD_CHARACTER");
+	IElementType BAD_CHARACTER = new EMScriptTokenType("VALUE");
 
-	class Factory {
-		public static PsiElement createElement(ASTNode node) {
-			IElementType type = node.getElementType();
-			if (type == PROPERTY) {
-				return new EMScriptPropertyImpl(node);
-			}
-			throw new AssertionError("Unknown element type: " + type);
-		}
-	}
+  class Factory {
+    public static PsiElement createElement(ASTNode node) {
+      IElementType type = node.getElementType();
+      if (type == PROPERTY) {
+        return new EMScriptPropertyImpl(node);
+      }
+      throw new AssertionError("Unknown element type: " + type);
+    }
+  }
 }

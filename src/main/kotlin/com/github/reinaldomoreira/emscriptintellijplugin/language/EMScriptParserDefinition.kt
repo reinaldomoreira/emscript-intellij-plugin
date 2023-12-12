@@ -18,6 +18,7 @@ import com.intellij.psi.tree.TokenSet
 class EMScriptParserDefinition : ParserDefinition {
 
     companion object {
+        @JvmStatic
         val FILE = IFileElementType(EMScriptLanguage.INSTANCE)
     }
 

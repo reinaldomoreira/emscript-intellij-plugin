@@ -1,4 +1,4 @@
-package com.github.reinaldomoreira.emscriptintellijplugin.language
+package com.github.reinaldomoreira.emscriptintellijplugin.language.syntax.highlighter
 
 import com.intellij.openapi.fileTypes.SyntaxHighlighter
 import com.intellij.openapi.fileTypes.SyntaxHighlighterFactory

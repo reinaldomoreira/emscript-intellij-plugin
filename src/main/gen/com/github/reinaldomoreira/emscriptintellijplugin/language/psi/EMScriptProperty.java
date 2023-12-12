@@ -7,4 +7,10 @@ import com.intellij.psi.PsiElement;
 
 public interface EMScriptProperty extends PsiElement {
 
+  @Nullable
+  String getKey();
+
+  @Nullable
+  String getValue();
+
 }

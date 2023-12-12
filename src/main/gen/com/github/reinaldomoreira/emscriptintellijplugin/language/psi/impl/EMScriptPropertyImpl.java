@@ -27,4 +27,16 @@ public class EMScriptPropertyImpl extends ASTWrapperPsiElement implements EMScri
     else super.accept(visitor);
   }
 
+  @Override
+  @Nullable
+  public String getKey() {
+    return EMScriptPsiImplUtil.getKey(this);
+  }
+
+  @Override
+  @Nullable
+  public String getValue() {
+    return EMScriptPsiImplUtil.getValue(this);
+  }
+
 }

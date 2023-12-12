@@ -4,7 +4,7 @@ import com.intellij.psi.tree.TokenSet
 
 interface EMScriptTokenSets {
     companion object {
-        val IDENTIFIERS = TokenSet.create(EMScriptTypes.KEY)
-        val COMMENTS = TokenSet.create(EMScriptTypes.COMMENT)
+        @JvmStatic val IDENTIFIERS = TokenSet.create(EMScriptTypes.KEY)
+        @JvmStatic val COMMENTS = TokenSet.create(EMScriptTypes.COMMENT)
     }
 }
