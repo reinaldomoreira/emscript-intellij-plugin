@@ -1,0 +1,31 @@
+// Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+{
+  parserClass="emscriptintellijplugin.parser.SimpleParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="Simple"
+  psiImplClassSuffix="Impl"
+  psiPackage="emscriptintellijplugin.psi"
+  psiImplPackage="emscriptintellijplugin.psi.impl"
+
+  elementTypeHolderClass="emscriptintellijplugin.psi.SimpleTypes"
+  elementTypeClass="emscriptintellijplugin.psi.SimpleElementType"
+  tokenTypeClass="emscriptintellijplugin.psi.SimpleTokenType"
+
+  psiImplUtilClass="emscriptintellijplugin.psi.impl.SimplePsiImplUtil"
+}
+
+simpleFile ::= item_*
+
+private item_ ::= (property|COMMENT|CRLF)
+
+property ::= (KEY? SEPARATOR VALUE?) | KEY {
+  pin=3
+  recoverWhile="recover_property"
+  mixin="emscriptintellijplugin.psi.impl.SimpleNamedElementImpl"
+  implements="emscriptintellijplugin.psi.SimpleNamedElement"
+  methods=[getKey getValue getName setName getNameIdentifier getPresentation]
+}
+
+private recover_property ::= !(KEY|SEPARATOR|COMMENT)
