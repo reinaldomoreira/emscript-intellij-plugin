@@ -32,35 +32,35 @@
     <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
     <extensions defaultExtensionNs="com.intellij">
-        <fileType name="Simple File" implementationClass="emscriptintellijplugin.SimpleFileType" fieldName="INSTANCE"
-                  language="Simple" extensions="simple"/>
-        <lang.parserDefinition language="Simple" implementationClass="emscriptintellijplugin.SimpleParserDefinition"/>
-        <lang.syntaxHighlighterFactory language="Simple"
-                                       implementationClass="emscriptintellijplugin.SimpleSyntaxHighlighterFactory"/>
-        <iconProvider implementation="emscriptintellijplugin.SimplePropertyIconProvider"/>
-        <colorSettingsPage implementation="emscriptintellijplugin.SimpleColorSettingsPage"/>
-        <annotator language="JAVA" implementationClass="emscriptintellijplugin.SimpleAnnotator"/>
+        <fileType name="Ems File" implementationClass="emscriptintellijplugin.EmsFileType" fieldName="INSTANCE"
+                  language="Ems" extensions="ems"/>
+        <lang.parserDefinition language="Ems" implementationClass="emscriptintellijplugin.EmsParserDefinition"/>
+        <lang.syntaxHighlighterFactory language="Ems"
+                                       implementationClass="emscriptintellijplugin.EmsSyntaxHighlighterFactory"/>
+        <iconProvider implementation="emscriptintellijplugin.EmsPropertyIconProvider"/>
+        <colorSettingsPage implementation="emscriptintellijplugin.EmsColorSettingsPage"/>
+        <annotator language="JAVA" implementationClass="emscriptintellijplugin.EmsAnnotator"/>
         <codeInsight.lineMarkerProvider language="JAVA"
-                                        implementationClass="emscriptintellijplugin.SimpleLineMarkerProvider"/>
-        <completion.contributor language="Simple"
-                                implementationClass="emscriptintellijplugin.SimpleCompletionContributor"/>
+                                        implementationClass="emscriptintellijplugin.EmsLineMarkerProvider"/>
+        <completion.contributor language="Ems"
+                                implementationClass="emscriptintellijplugin.EmsCompletionContributor"/>
         <psi.referenceContributor language="JAVA"
-                                  implementation="emscriptintellijplugin.SimpleReferenceContributor"/>
-        <lang.refactoringSupport language="Simple"
-                                 implementationClass="emscriptintellijplugin.SimpleRefactoringSupportProvider"/>
-        <lang.findUsagesProvider language="Simple"
-                                 implementationClass="emscriptintellijplugin.SimpleFindUsagesProvider"/>
-        <lang.foldingBuilder language="JAVA" implementationClass="emscriptintellijplugin.SimpleFoldingBuilder"/>
-        <gotoSymbolContributor implementation="emscriptintellijplugin.SimpleChooseByNameContributor"/>
-        <lang.psiStructureViewFactory language="Simple"
-                                      implementationClass="emscriptintellijplugin.SimpleStructureViewFactory"/>
-        <navbar implementation="emscriptintellijplugin.SimpleStructureAwareNavbar"/>
-        <lang.formatter language="Simple" implementationClass="emscriptintellijplugin.SimpleFormattingModelBuilder"/>
-        <codeStyleSettingsProvider implementation="emscriptintellijplugin.SimpleCodeStyleSettingsProvider"/>
-        <langCodeStyleSettingsProvider implementation="emscriptintellijplugin.SimpleLanguageCodeStyleSettingsProvider"/>
-        <lang.commenter language="Simple" implementationClass="emscriptintellijplugin.SimpleCommenter"/>
-        <lang.documentationProvider language="Simple" implementationClass="emscriptintellijplugin.SimpleDocumentationProvider"/>
-        <spellchecker.support language="Simple" implementationClass="emscriptintellijplugin.SimpleSpellcheckingStrategy"/>
+                                  implementation="emscriptintellijplugin.EmsReferenceContributor"/>
+        <lang.refactoringSupport language="Ems"
+                                 implementationClass="emscriptintellijplugin.EmsRefactoringSupportProvider"/>
+        <lang.findUsagesProvider language="Ems"
+                                 implementationClass="emscriptintellijplugin.EmsFindUsagesProvider"/>
+        <lang.foldingBuilder language="JAVA" implementationClass="emscriptintellijplugin.EmsFoldingBuilder"/>
+        <gotoSymbolContributor implementation="emscriptintellijplugin.EmsChooseByNameContributor"/>
+        <lang.psiStructureViewFactory language="Ems"
+                                      implementationClass="emscriptintellijplugin.EmsStructureViewFactory"/>
+        <navbar implementation="emscriptintellijplugin.EmsStructureAwareNavbar"/>
+        <lang.formatter language="Ems" implementationClass="emscriptintellijplugin.EmsFormattingModelBuilder"/>
+        <codeStyleSettingsProvider implementation="emscriptintellijplugin.EmsCodeStyleSettingsProvider"/>
+        <langCodeStyleSettingsProvider implementation="emscriptintellijplugin.EmsLanguageCodeStyleSettingsProvider"/>
+        <lang.commenter language="Ems" implementationClass="emscriptintellijplugin.EmsCommenter"/>
+        <lang.documentationProvider language="Ems" implementationClass="emscriptintellijplugin.EmsDocumentationProvider"/>
+        <spellchecker.support language="Ems" implementationClass="emscriptintellijplugin.EmsSpellcheckingStrategy"/>
     </extensions>
 
 </idea-plugin>
