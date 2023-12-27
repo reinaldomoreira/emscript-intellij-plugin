@@ -1,32 +1,66 @@
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+
 <idea-plugin>
+
     <id>com.github.reinaldomoreira.emscriptintellijplugin</id>
     <name>EMScript Highlight</name>
     <vendor>reinaldomoreira</vendor>
 
+    <!-- Product and plugin compatibility requirements -->
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
+
+    <!-- Text to display as description on Settings | Plugin page -->
+    <description>
+        <![CDATA[
+      EMScript language support to an IntelliJ Platform-based IDE.
+      <br><a href="https://www.kok-emm.com/docs/emscript/basic">EMScript</a> is a Macrorify language.
+      <br>and this plugin add support for syntax highlighting, annotations, code completion, and other features.
+      <br>
+    ]]>
+    </description>
+    <change-notes>
+        <![CDATA[
+      <ul>
+        <li><b>0.0.1</b> Initial release with basic features.</li>
+      </ul>
+    ]]>
+    </change-notes>
+
+    <!-- Text to display as company information on Settings | Plugin page -->
+    <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
     <extensions defaultExtensionNs="com.intellij">
-        <fileType
-            name="EMScript File"
-            implementationClass="com.github.reinaldomoreira.emscriptintellijplugin.language.EMScriptFileType"
-            fieldName="INSTANCE"
-            language="EMScript"
-            extensions="ems"/>
+        <fileType name="Ems File" implementationClass="emscriptintellijplugin.EmsFileType" fieldName="INSTANCE"
+                  language="Ems" extensions="ems"/>
+        <lang.parserDefinition language="Ems" implementationClass="emscriptintellijplugin.EmsParserDefinition"/>
+        <lang.syntaxHighlighterFactory language="Ems"
+                                       implementationClass="emscriptintellijplugin.EmsSyntaxHighlighterFactory"/>
+        <iconProvider implementation="emscriptintellijplugin.EmsPropertyIconProvider"/>
+        <colorSettingsPage implementation="emscriptintellijplugin.EmsColorSettingsPage"/>
+        <annotator language="JAVA" implementationClass="emscriptintellijplugin.EmsAnnotator"/>
+        <codeInsight.lineMarkerProvider language="JAVA"
+                                        implementationClass="emscriptintellijplugin.EmsLineMarkerProvider"/>
+        <completion.contributor language="Ems"
+                                implementationClass="emscriptintellijplugin.EmsCompletionContributor"/>
+        <psi.referenceContributor language="JAVA"
+                                  implementation="emscriptintellijplugin.EmsReferenceContributor"/>
+        <lang.refactoringSupport language="Ems"
+                                 implementationClass="emscriptintellijplugin.EmsRefactoringSupportProvider"/>
+        <lang.findUsagesProvider language="Ems"
+                                 implementationClass="emscriptintellijplugin.EmsFindUsagesProvider"/>
+        <lang.foldingBuilder language="JAVA" implementationClass="emscriptintellijplugin.EmsFoldingBuilder"/>
+        <gotoSymbolContributor implementation="emscriptintellijplugin.EmsChooseByNameContributor"/>
+        <lang.psiStructureViewFactory language="Ems"
+                                      implementationClass="emscriptintellijplugin.EmsStructureViewFactory"/>
+        <navbar implementation="emscriptintellijplugin.EmsStructureAwareNavbar"/>
+        <lang.formatter language="Ems" implementationClass="emscriptintellijplugin.EmsFormattingModelBuilder"/>
+        <codeStyleSettingsProvider implementation="emscriptintellijplugin.EmsCodeStyleSettingsProvider"/>
+        <langCodeStyleSettingsProvider implementation="emscriptintellijplugin.EmsLanguageCodeStyleSettingsProvider"/>
+        <lang.commenter language="Ems" implementationClass="emscriptintellijplugin.EmsCommenter"/>
+        <lang.documentationProvider language="Ems" implementationClass="emscriptintellijplugin.EmsDocumentationProvider"/>
+        <spellchecker.support language="Ems" implementationClass="emscriptintellijplugin.EmsSpellcheckingStrategy"/>
     </extensions>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <lang.parserDefinition language="EMScript"
-                               implementationClass="com.github.reinaldomoreira.emscriptintellijplugin.language.EMScriptParserDefinition"/>
-    </extensions>
-
-    <extensions defaultExtensionNs="com.intellij">
-        <lang.syntaxHighlighterFactory
-            language="EMScript"
-            implementationClass="com.github.reinaldomoreira.emscriptintellijplugin.language.syntax.highlighter.EMScriptSyntaxHighlighterFactory"/>
-    </extensions>
-
-    <extensions defaultExtensionNs="com.intellij">
-        <colorSettingsPage implementation="com.github.reinaldomoreira.emscriptintellijplugin.language.syntax.color_settings.EMScriptColorSettingsPage"/>
-    </extensions>
 </idea-plugin>
